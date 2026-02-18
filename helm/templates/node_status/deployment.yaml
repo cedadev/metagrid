@@ -67,7 +67,7 @@ spec:
         - name: prom-data
           mountPath: /prometheus
         {{- with .Values.nodeStatusBackend.prometheus.volumeMounts }}
-          {{- toYaml . | nindent 12 }}
+          {{- toYaml . | nindent 8 }}
         {{- end }}
       - name: blackbox
         securityContext:
@@ -100,7 +100,7 @@ spec:
       - name: prom-data
         emptyDir: {}
       {{- with .Values.nodeStatusBackend.volumes }}
-        {{- toYaml . | nindent 8 }}
+        {{- toYaml . | nindent 6 }}
       {{- end }}
       {{- with .Values.nodeStatusBackend.nodeSelector }}
       nodeSelector:
