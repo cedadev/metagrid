@@ -147,7 +147,7 @@ spec:
             name: {{ $prefix }}-backend
             port:
               number: {{ $.Values.backend.service.port }}
-      - path: /admin
+      - path: /{{ $.Values.django.adminUrl }}
         pathType: {{ $.Values.ingress.pathType }}
         backend:
           service:
